@@ -898,7 +898,7 @@ import datetime
 
 # %%
 checkpoint = keras.callbacks.ModelCheckpoint(
-    filepath=f"{STAGING_BUCKET}/checkpoints/colmo2-tpu"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S")+".keras",
+    filepath=STAGING_BUCKET+"/checkpoints/colmo-tpu-{epoch:02d}-{val_loss:.2f}.keras",
     monitor='val_loss',
     mode='min',
     save_best_only=True,
